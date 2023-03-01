@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="60dp"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    tools:context=".home.HomeFragment">
+    <!--Search Bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F7F7"
+        android:paddingBottom="10dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp">
+                <!--Icon user-->
+                <ImageView
+                    android:id="@+id/icoUser"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="iconUser"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck"
+                    tools:srcCompat="@tools:sample/avatars" />
+                <!--Icon Cart-->
+                <ImageView
+                    android:id="@+id/icoCart"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/icoUser"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/icoUser"
+                    tools:srcCompat="@tools:sample/avatars" />
+                <!--Search Input-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/txtSearchLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/icoCart"
+                    app:layout_constraintStart_toEndOf="@+id/icoUser"
+                    app:layout_constraintTop_toTopOf="@+id/icoUser">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:padding="1dp">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:autofillHints=""
+                            android:background="@drawable/bg_txtsearch"
+                            android:hint="Search"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:minWidth="240dp"
+                            android:paddingStart="20dp"
+                            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/epoxyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <!--Main-->
+    <!--    <androidx.core.widget.NestedScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/search_bar">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:orientation="vertical"-->
+    <!--            tools:ignore="ExtraText"-->
+    <!--            android:layout_marginBottom="15dp">-->
+    <!--            &lt;!&ndash;Filter&ndash;&gt;-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:id="@+id/recyclerFilterList"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:paddingTop="15dp"-->
+    <!--                android:paddingBottom="15dp"-->
+    <!--                tools:itemCount="2" />-->
+    <!--            &lt;!&ndash;Image Slider&ndash;&gt;-->
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <androidx.viewpager2.widget.ViewPager2-->
+    <!--                    android:id="@+id/viewBanner"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="200dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent"></androidx.viewpager2.widget.ViewPager2>-->
+
+    <!--                <me.relex.circleindicator.CircleIndicator3-->
+    <!--                    android:id="@+id/tabDots"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="30dp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="@id/viewBanner"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent" />-->
+    <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            &lt;!&ndash;Product new arrival&ndash;&gt;-->
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:showDividers="middle">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="NEW ARRIVALS"-->
+    <!--                    android:textColor="@color/black"-->
+    <!--                    android:textSize="18dp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="View all"-->
+    <!--                    android:textColor="#0077AA"-->
+    <!--                    android:textSize="13sp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            &lt;!&ndash;Recyclerview Product&ndash;&gt;-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:id="@+id/recycler_view"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:paddingLeft="10dp"-->
+    <!--                tools:itemCount="1" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="10dp"-->
+    <!--                android:background="@color/white" />-->
+    <!--            &lt;!&ndash;Product best seller&ndash;&gt;-->
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:showDividers="middle">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="BEST SELLERS"-->
+    <!--                    android:textColor="@color/black"-->
+    <!--                    android:textSize="18dp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="View all"-->
+    <!--                    android:textColor="#0077AA"-->
+    <!--                    android:textSize="13sp"-->
+    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            &lt;!&ndash; Recyclerview Product&ndash;&gt;-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:id="@+id/recycler_view_bestpd"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:paddingLeft="10dp"-->
+    <!--                tools:itemCount="1" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="10dp"-->
+    <!--                android:background="@color/white" />-->
+    <!--            &lt;!&ndash;Bottom Banner&ndash;&gt;-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="10dp"-->
+    <!--                android:text="ONLINE PROMOTIONS"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="@color/white"-->
+    <!--                android:paddingTop="15dp"-->
+    <!--                android:paddingBottom="15dp">-->
+
+    <!--                <androidx.recyclerview.widget.RecyclerView-->
+    <!--                    android:id="@+id/recycler_view_bottombanner"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:background="@color/white"-->
+    <!--                    tools:itemCount="2" />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="5dp"-->
+    <!--                android:background="#EAEAEA" />-->
+    <!--            &lt;!&ndash;News&ndash;&gt;-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="10dp"-->
+    <!--                android:text="CENTRAL INSPIRER"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="#F7F7F7"-->
+    <!--                android:paddingTop="15dp"-->
+    <!--                android:paddingBottom="15dp">-->
+
+    <!--                <androidx.recyclerview.widget.RecyclerView-->
+    <!--                    android:id="@+id/recycler_view_news"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginTop="5dp"-->
+    <!--                    android:background="#F7F7F7"-->
+    <!--                    tools:itemCount="2" />-->
+    <!--            </LinearLayout>-->
+    <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="10dp"-->
+    <!--                android:text="SELECTED FOR YOU"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="5dp"-->
+    <!--                android:background="#EAEAEA" />-->
+    <!--&lt;!&ndash;Selected for you&ndash;&gt;-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:id="@+id/recycler_view_recommend"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:layout_marginBottom="15dp"-->
+    <!--                android:paddingLeft="10dp"-->
+    <!--                tools:itemCount="1" />-->
+    <!--&lt;!&ndash;Hot Deals&ndash;&gt;-->
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="5dp"-->
+    <!--                android:background="#EAEAEA" />-->
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="10dp"-->
+    <!--                android:text="HOT DEALS"-->
+    <!--                android:textColor="@color/black"-->
+    <!--                android:textSize="18dp"-->
+    <!--                android:textStyle="bold" />-->
+    <!--            <androidx.recyclerview.widget.RecyclerView-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:paddingLeft="10dp"-->
+    <!--                tools:itemCount="1"-->
+    <!--                android:id="@+id/gridProduct"-->
+    <!--                />-->
+    <!--        </LinearLayout>-->
+    <!--    </androidx.core.widget.NestedScrollView>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/button_first"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="4dp"-->
+    <!--        android:text="@string/next"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.08"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+</LinearLayout>
