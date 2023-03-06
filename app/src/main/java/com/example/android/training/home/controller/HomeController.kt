@@ -1,13 +1,14 @@
 package com.example.android.training.home.controller
 
 import com.airbnb.epoxy.TypedEpoxyController
-import com.example.android.training.home.controller.model.HeaderBannerModel
+import com.example.android.training.home.adapter.HandleClickListener
+import com.example.android.training.home.controller.model.bestSeller
 import com.example.android.training.home.controller.model.headerBanner
 import com.example.android.training.home.controller.model.homeFilter
-import com.example.android.training.home.model.HomeBannerLayout
+import com.example.android.training.home.controller.model.newArrivalProduct
 import com.example.android.training.home.model.HomeViewState
 
-class HomeController : TypedEpoxyController<HomeViewState>() {
+class HomeController (private val onClick: HandleClickListener): TypedEpoxyController<HomeViewState>() {
     override fun buildModels(data: HomeViewState?) {
         data?.run {
             headerBanner {
@@ -16,6 +17,16 @@ class HomeController : TypedEpoxyController<HomeViewState>() {
             }
             homeFilter {
                 id("_home_filter")
+            }
+            newArrivalProduct {
+                id("new_arrival")
+                listProduct(homeProductDataModel)
+                onClick(this@HomeController.onClick)
+            }
+            bestSeller {
+                id("best_seller")
+                listProduct(homeProductDataModel)
+                onClick(this@HomeController.onClick)
             }
         }
     }

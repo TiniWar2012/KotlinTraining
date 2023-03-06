@@ -91,4 +91,13 @@ dependencies {
     //Epoxy RecyclerVIew
     implementation "com.airbnb.android:epoxy:5.1.1"
     kapt "com.airbnb.android:epoxy-processor:5.1.1"
+    //Room Database
+    implementation "androidx.room:room-runtime:2.5.0"
+    kapt "androidx.room:room-compiler:2.5.0"
+
+    // To use Kotlin annotation processing tool (kapt)
+
+    // optional - RxJava3 support for Room
+    implementation "androidx.room:room-rxjava3:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.0"
 }

@@ -14,7 +14,7 @@ import java.lang.reflect.Method
 import java.lang.reflect.ParameterizedType
 import java.util.concurrent.ConcurrentHashMap
 
-abstract class EpoxyViewBindingModelWithHolder <in T : ViewBinding> :
+abstract class EpoxyViewBindingModelWithHolder<in T : ViewBinding> :
     EpoxyModelWithHolder<EpoxyViewBindingHolder>() {
     protected val subscriptions: CompositeDisposable by lazy { CompositeDisposable() }
 
@@ -54,8 +54,6 @@ abstract class EpoxyViewBindingModelWithHolder <in T : ViewBinding> :
         subscriptions.clear()
         super.onViewDetachedFromWindow(holder)
     }
-
-    abstract fun LayoutHeaderBannerBinding.bind(context: Context)
 }
 
 // Static cache of a method pointer for each type of item used.

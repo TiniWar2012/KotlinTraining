@@ -12,7 +12,8 @@ import com.example.android.training.home.adapter.ProductAdapter
 import com.example.android.training.home.model.HomeProductLayout
 
 @EpoxyModelClass(layout = R.layout.layout_product_recyclerview)
-abstract class NewArrivalProductModel :
+
+abstract class BestSellerModel  :
     EpoxyViewBindingModelWithHolder<LayoutProductRecyclerviewBinding>() {
     @EpoxyAttribute
     lateinit var listProduct: List<HomeProductLayout>
@@ -21,13 +22,13 @@ abstract class NewArrivalProductModel :
     lateinit var onClick: HandleClickListener
 
     override fun LayoutProductRecyclerviewBinding.bind(context: Context) {
-        val productAdapter = ProductAdapter(onClick = onClick)
+        val productAdapter = ProductAdapter(onClick)
         if (::listProduct.isInitialized) {
             productAdapter.setData(listProduct)
         }
         recyclerView.apply {
             adapter = productAdapter
-            productListType.text = "NEW ARRIVALS"
+            productListType.text = "BEST SELLER"
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         }

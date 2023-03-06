@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="0dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardBackgroundColor="#FFFFFF"
-    >
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="130dp"
-            android:layout_height="160dp"
-            android:src="@drawable/bg_ic_launcher" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="130dp"
+                android:layout_height="160dp"
+                android:src="@drawable/bg_ic_launcher"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/button_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/imageView"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView"-->
+        <!--            android:layout_width="130dp"-->
+        <!--            android:layout_height="160dp"-->
+        <!--            android:src="@drawable/bg_ic_launcher" />-->
         <TextView
             android:id="@+id/Title"
             android:layout_width="match_parent"
@@ -37,13 +56,13 @@
             android:id="@+id/Description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
             android:fontFamily="sans-serif"
+            android:maxLines="1"
             android:text="ZWILLING"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:maxLines="1"
-            android:ellipsize="end"/>
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/Price"
@@ -53,7 +72,7 @@
             android:text="ZWILLING"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
     </LinearLayout>

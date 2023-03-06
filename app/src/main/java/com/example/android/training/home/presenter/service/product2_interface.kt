@@ -1,4 +1,4 @@
-package com.example.android.training.home.presenter.`interface`
+package com.example.android.training.home.presenter.service
 
 import com.example.android.training.home.model.Product
 import com.squareup.moshi.Moshi

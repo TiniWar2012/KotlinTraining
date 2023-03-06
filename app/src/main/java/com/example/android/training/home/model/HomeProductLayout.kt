@@ -1,11 +1,15 @@
 package com.example.android.training.home.model
 
-data class HomeProductLayout
-    (
-    val category: String,
-    val description: String,
-    val id: Int,
-    val image: String,
-    val price: Double,
-    val title: String
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "ProductData")
+data class HomeProductLayout(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo( name = "TITLE") val title: String,
+    @ColumnInfo(name = "PRICE") var price: Double,
+    @ColumnInfo(name = "DESCRIPTION") val description: String,
+    @ColumnInfo(name = "IMAGE") val image: String,
+    @ColumnInfo(name = "LIKE") var like: Boolean = false
 )

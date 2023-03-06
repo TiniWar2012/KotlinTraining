@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="60dp"
-    android:background="#F7F7F7"
+    android:background="#ffffff"
     android:orientation="vertical"
     tools:context=".home.HomeFragment">
     <!--Search Bar-->

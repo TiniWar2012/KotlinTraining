@@ -7,7 +7,6 @@ import com.airbnb.epoxy.EpoxyModelClass
 import com.example.android.training.R
 import com.example.android.training.base.EpoxyViewBindingModelWithHolder
 import com.example.android.training.databinding.LayoutFilterBinding
-import com.example.android.training.databinding.LayoutHeaderBannerBinding
 import com.example.android.training.home.adapter.FilterAdapter
 
 @EpoxyModelClass(layout = R.layout.layout_filter)
