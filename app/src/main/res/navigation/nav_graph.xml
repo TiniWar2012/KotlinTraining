@@ -3,26 +3,81 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.android.training.home.HomeFragment"
+        android:id="@+id/homeFragment"
+        android:name="com.example.android.training.presenter.ui.home.HomeFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_DetailProductFragment"
+            app:destination="@id/DetailProductFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_HomeFragment_to_loggedFragment"
+            app:destination="@id/loggedFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.android.training.screen3.SecondFragment"
+        android:name="com.example.android.training.presenter.ui.account.AccountFragment"
         android:label="No"
-        tools:layout="@layout/fragment_home_v2">
+        tools:layout="@layout/fragment_product">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/DetailProductFragment"
+        android:name="com.example.android.training.presenter.ui.detail_product.DetailProductFragment"
+        android:label="No"
+        tools:layout="@layout/fragment_detail_product">
+
+        <argument
+            android:name="homeProductLayoutNew"
+            app:argType="com.example.android.training.presenter.ui.home.model.HomeProductLayout" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.android.training.presenter.ui.account.AccountFragment"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_accountFragment_to_HomeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.android.training.presenter.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loggedFragment"
+        android:name="com.example.android.training.presenter.ui.logged.AccountFragmentLogged"
+        tools:layout="@layout/fragment_account_logged_in">
+        <action
+            android:id="@+id/action_loggedFragment_to_HomeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/brandsFragment"
+        android:name="com.example.android.training.presenter.ui.product.ProductFragment"
+        android:label="FoodFragment" />
+
 </navigation>

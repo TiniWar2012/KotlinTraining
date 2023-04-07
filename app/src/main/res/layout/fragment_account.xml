@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_header"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="cover_photo"
+        tools:ignore="HardcodedText" />
+    <!--    Choose languages-->
+    <Switch
+        android:id="@+id/btn_change_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:thumb="@drawable/selector_languages"
+        android:track="@drawable/selector_tracking_buton_languages"
+        app:layout_constraintEnd_toStartOf="@id/btn_setting"
+        app:layout_constraintTop_toTopOf="@id/btn_close"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+    <!--Button setting-->
+    <FrameLayout
+        android:id="@+id/btn_setting"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/shape_rounded_transparent_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_close">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_setting" />
+    </FrameLayout>
+    <!--button close-->
+    <FrameLayout
+        android:id="@+id/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_rounded_transparent_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlHardcoded">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_close" />
+    </FrameLayout>
+    <!--    switch languages-->
+    <!--    avatar-->
+    <FrameLayout
+        android:id="@+id/avatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="95dp"
+        app:layout_constraintEnd_toEndOf="@id/background"
+        app:layout_constraintStart_toStartOf="@id/background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/account" />
+    </FrameLayout>
+    <!--    Welcome guest text-->
+    <include
+        android:id="@+id/txt_welcome_guest"
+        layout="@layout/txt_welcome_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avatar" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_welcome_guest"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/btn_register" />
+
+        <ImageView
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/btn_login" />
+    </LinearLayout>    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_welcome_guest"
+        android:visibility="invisible"
+    >
+
+        <ImageView
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/btn_logout" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

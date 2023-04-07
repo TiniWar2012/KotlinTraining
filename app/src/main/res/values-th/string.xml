@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Central</string>
+    <string name="action_settings">Settings</string>
+<!--    Strings used for fragments for navigation-->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="search">ค้นหาสินค้า/แบรนด์</string>
+    <string name="filter_coupons">คูปอง</string>
+    <string name="filter_shop_by_brand">ช้อปปิ้งร้านดัง</string>
+    <string name="filter_shop_by_store">ช้อปปิ้งร้านดัง</string>
+    <string name="filter_shop_by_product">เลือกสินค้า</string>
+    <string name="filter_beauty">ความงาม</string>
+    <string name="filter_women">ผู้หญิง</string>
+    <string name="filter_men">ผู้ชาย</string>
+    <string name="filter_kids">เด็กและของเล่น</string>
+    <string name="filter_home">บ้าน</string>
+    <string name="filter_tech">เทคโนโลยี</string>
+    <string name="filter_sport_travel">กีฬา -ท่องเที่ยว-</string>
+    <string name="filter_gift">ของขวัญ</string>
+    <string name="view_all">ดูทั้งหมด</string>
+    <string name="NEW_ARRIVALS">สินค้าใหม่</string>
+    <string name="BEST_SELLERS">สินค้าขายดี</string>
+    <string name="price">฿ %s</string>
+</resources>

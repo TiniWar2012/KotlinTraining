@@ -1,74 +1,64 @@
 package com.example.android.training
 
+import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
 import android.view.Menu
 import android.view.MenuItem
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupWithNavController
 import com.example.android.training.databinding.ActivityMainBinding
+import com.example.android.training.presenter.ui.home.presenter.application.ProductApplication
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.android.training.home.HomeFragment
-import com.example.android.training.screen2.LastFragment
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     private lateinit var binding: ActivityMainBinding
 
-    lateinit var bottomNav : BottomNavigationView
-
+    private lateinit var bottomNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 //        setSupportActionBar(binding.toolbar)
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        val navController = navHostFragment.navController
+
         appBarConfiguration = AppBarConfiguration(navController.graph)
-//bottom navbar
-        bottomNav = findViewById(R.id.bottomNav) as BottomNavigationView
-        bottomNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.homeFragment -> {
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.brandsFragment -> {
-                    loadFragment(LastFragment())
-                    true
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.DetailProductFragment -> {
+                    binding.bottomNav.isVisible = false
                 }
                 else -> {
-                    Log.i("NavBar","Error?")
-                    false
+                    binding.bottomNav.isVisible = true
                 }
             }
-
         }
+//bottom navbar
+        bottomNav = binding.bottomNav
+        bottomNav.setupWithNavController(navController)
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
         supportActionBar?.hide()
-
-        //
-
     }
-    private  fun loadFragment(fragment: Fragment){
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.container,fragment)
-        transaction.addToBackStack(null)
-        transaction.attach(fragment)
-        transaction.commit()
-    }
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -87,7 +77,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun attachBaseContext(newBase: Context) {
+        val lang = (newBase.applicationContext as ProductApplication).myPreference.getLoginCountry()
+        super.attachBaseContext(MyContextWrapper.wrap(newBase, lang))
+    }
+
 }

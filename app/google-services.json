@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "533557826264",
+    "firebase_url": "https://training-e9995-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "training-e9995",
+    "storage_bucket": "training-e9995.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533557826264:android:9761db0cbafda29df8fdad",
+        "android_client_info": {
+          "package_name": "com.example.android.training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533557826264-2u2ghvvdkrvn2ehp5315ikjr74r2t591.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn9smz_idYJNU1mNJVhTJZ0zyYi3hWIWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533557826264-2u2ghvvdkrvn2ehp5315ikjr74r2t591.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Training</string>
+    <string name="app_name">Central</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
+     Strings used for fragments for navigation
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -9,4 +9,21 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="search">Search Product/Brands</string>
+    <string name="filter_coupons">Coupons</string>
+    <string name="filter_shop_by_brand">Shop by Brand</string>
+    <string name="filter_shop_by_store">Shop by Store</string>
+    <string name="filter_shop_by_product">Shop by Product</string>
+    <string name="filter_beauty">Beauty</string>
+    <string name="filter_women">Women</string>
+    <string name="filter_men">Men</string>
+    <string name="filter_kids">Kids</string>
+    <string name="filter_home">Home</string>
+    <string name="filter_tech">Tech</string>
+    <string name="filter_sport_travel">Sport -Travel-</string>
+    <string name="filter_gift">Gifts</string>
+    <string name="view_all">View all</string>
+    <string name="NEW_ARRIVALS">NEW ARRIVALS</string>
+    <string name="BEST_SELLERS">BEST SELLERS</string>
+    <string name="price">฿ %s</string>
 </resources>
