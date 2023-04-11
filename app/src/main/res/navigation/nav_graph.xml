@@ -76,8 +76,24 @@
     </fragment>
 
     <fragment
-        android:id="@+id/brandsFragment"
+        android:id="@+id/productFragment"
         android:name="com.example.android.training.presenter.ui.product.ProductFragment"
         android:label="FoodFragment" />
+    <fragment
+        android:id="@+id/listProductFrasgment"
+        android:name="com.example.android.training.presenter.ui.product.childfragment.ListProductFragment"
+        tools:layout="@layout/child_fragment_product">
+        <action
+            android:id="@+id/action_listProductFrasgment_to_productDetailFragment_v2"
+            app:destination="@id/productDetailFragment_v2" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment_v2"
+        android:name="com.example.android.training.presenter.ui.detail.ProductDetailFragment_v2"
+        tools:layout="@layout/content_detail_product_v2">
+        <action
+            android:id="@+id/action_productDetailFragment_v2_to_listProductFrasgment"
+            app:destination="@id/listProductFrasgment" />
+    </fragment>
 
 </navigation>

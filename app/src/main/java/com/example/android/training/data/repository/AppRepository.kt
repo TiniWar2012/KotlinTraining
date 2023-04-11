@@ -24,6 +24,6 @@ class AppRepository @Inject constructor(
     }
 
     fun getNewProductList(): Single<List<ProductLayout>>{
-        return productNewService.getProduct()
+        return productNewService.getProduct().map { it.products }
     }
 }

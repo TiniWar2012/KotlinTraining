@@ -2,7 +2,7 @@ package com.example.android.training.presenter.ui.home.presenter.application
 
 import android.app.Application
 import com.example.android.training.MyPreference
-import com.example.android.training.presenter.ui.home.presenter.data.ProductDetailDatabase
+import com.example.android.training.data.ProductDetailDatabase
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 

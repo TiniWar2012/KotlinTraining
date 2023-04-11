@@ -39,11 +39,12 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.DetailProductFragment -> {
-                    binding.bottomNav.isVisible = false
+                R.id.homeFragment,
+                R.id.productFragment -> {
+                    binding.bottomNav.isVisible = true
                 }
                 else -> {
-                    binding.bottomNav.isVisible = true
+                    binding.bottomNav.isVisible = false
                 }
             }
         }

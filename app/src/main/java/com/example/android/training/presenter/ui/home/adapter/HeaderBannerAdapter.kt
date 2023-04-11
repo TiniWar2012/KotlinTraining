@@ -13,6 +13,8 @@ import com.example.android.training.presenter.ui.home.model.HomeBannerLayout
 class HeaderBannerAdapter : RecyclerView.Adapter<HeaderBannerAdapter.MyViewHolder>() {
     private val bannerList: MutableList<HomeBannerLayout> = mutableListOf()
 
+//    private val images = mutableListOf<String>()
+
     @SuppressLint("NotifyDataSetChanged")
     fun setData(listBanner: List<HomeBannerLayout>) {
         bannerList.addAll(listBanner)
@@ -21,6 +23,7 @@ class HeaderBannerAdapter : RecyclerView.Adapter<HeaderBannerAdapter.MyViewHolde
 
     class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         private val imageView = view.findViewById<ImageView>(R.id.img_banner)
+//        fun bind(url: String) {
         fun bind(photo: HomeBannerLayout) {
             Glide.with(view.context).load(photo.getImageUrl())
                 .placeholder(R.drawable.img_loading_icon).centerCrop().into(imageView)
@@ -34,6 +37,7 @@ class HeaderBannerAdapter : RecyclerView.Adapter<HeaderBannerAdapter.MyViewHolde
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+//        holder.bind(images[position])
         holder.bind(bannerList[position])
     }
 

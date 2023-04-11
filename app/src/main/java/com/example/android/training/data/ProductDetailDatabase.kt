@@ -1,13 +1,14 @@
-package com.example.android.training.presenter.ui.home.presenter.data
+package com.example.android.training.data
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import com.example.android.training.presenter.ui.home.model.HomeProductLayout
 import com.example.android.training.presenter.ui.home.presenter.dao.ProductDataDao
+import com.example.android.training.presenter.ui.product.model.ListConverter
+import com.example.android.training.presenter.ui.product.model.ProductLayout
 
-@Database(entities = [HomeProductLayout::class], version = DB_VERSION, exportSchema = false)
+@Database(entities = [HomeProductLayout::class, ProductLayout::class], version = DB_VERSION, exportSchema = false)
+@TypeConverters(ListConverter::class)
 abstract class ProductDetailDatabase : RoomDatabase() {
     abstract fun productDataDao(): ProductDataDao
 
@@ -27,4 +28,4 @@ abstract class ProductDetailDatabase : RoomDatabase() {
     }
 }
 
-const val DB_VERSION = 4
+const val DB_VERSION = 5

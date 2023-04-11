@@ -72,7 +72,7 @@ object NetworkModule {
     }
     @Singleton
     @Provides
-    @Named("ProductRetrofitNew")
+    @Named("ProductNewRetrofit")
     fun provideProductRetrofitNew(
         okHttpClient: OkHttpClient,
         rxJava3CallAdapterFactory: RxJava3CallAdapterFactory,
@@ -101,6 +101,7 @@ object NetworkModule {
     ): ProductService {
         return retrofit.create(ProductService::class.java)
     }
+
     @Singleton
     @Provides
     fun provideProductNewService(
