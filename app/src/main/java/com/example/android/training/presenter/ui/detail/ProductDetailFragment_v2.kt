@@ -31,9 +31,21 @@ class ProductDetailFragment_v2 : Fragment() {
             titleProduct.text = productLayout?.title.toString()
             ratingBar.rating = productLayout?.rating!!.toFloat()
         }
-        binding.btnBack.setOnClickListener {
+
+        val photoProductAdapter = PhotoProductAdapter()
+        binding.content.productPhoto.adapter = photoProductAdapter
+        productLayout?.let {
+            photoProductAdapter.setData(productLayout.images)
+        }
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btnBack1.setOnClickListener {
             findNavController().popBackStack()
         }
-        return binding.root
+//        binding.content.productPhoto.adapter =
     }
 }

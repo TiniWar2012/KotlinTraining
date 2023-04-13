@@ -8,7 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="tranparentblack">#4D000000</color>
-    <color name="colorPrimary">#0F9D58</color>
+    <color name="colorPrimary">#E3E3E3</color>
     <color name="colorPrimaryDark">#056008</color>
     <color name="colorAccent">#E39D36</color>
+    <color name="textGrey">#B1B1B1</color>
+    <color name="blue">#38A4CC</color>
+    <color name="textBlue">#5B9AE4</color>
+    <color name="mainRed">#8C222E</color>
+    <color name="textRed">#B54152</color>
+    <color name="backgroundApp">#E3E3E3</color>
+    <color name="backgroundItem">#FFFFFF</color>
+    <color name="backgroundGrey">#808080</color>
 </resources>
