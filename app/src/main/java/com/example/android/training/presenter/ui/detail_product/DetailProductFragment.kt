@@ -50,7 +50,7 @@ class DetailProductFragment : Fragment(), HomeView {
         }
 
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.homeFragment)
+            findNavController().popBackStack()
         }
 
         return binding.root

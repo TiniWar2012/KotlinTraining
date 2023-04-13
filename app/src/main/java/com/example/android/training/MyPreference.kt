@@ -11,7 +11,7 @@ class MyPreference @Inject constructor(
     companion object {
         const val PREFERENCE_NAME = "SharedPreference"
         const val PREFERENCE_LANGUAGE = "language"
-        const val PREFERENCE_STATUS = "language"
+        const val PREFERENCE_STATUS = "not login"
     }
 
     fun getLoginCountry(): String {

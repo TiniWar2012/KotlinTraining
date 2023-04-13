@@ -11,7 +11,6 @@ import com.example.android.training.R
 import com.example.android.training.base.EpoxyViewBindingModelWithHolder
 import com.example.android.training.databinding.ItemProductV2Binding
 import com.example.android.training.presenter.ui.product.model.ProductLayout
-import kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf.Visibility
 
 @SuppressLint("NonConstantResourceId")
 @EpoxyModelClass(layout = R.layout.item_product_v2)
@@ -40,7 +39,8 @@ abstract class ProductModel : EpoxyViewBindingModelWithHolder<ItemProductV2Bindi
             priceold.text =
                 "฿ ${product.price - (product.price * (product.discountPercentage / 100))}"
             priceold.isVisible
-        }else{
+            priceold.paint
+        } else {
             priceold.isVisible = false
         }
         ratingBar.rating = product.rating.toFloat()

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:id="@+id/brandProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sold by G200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <View
+        android:id="@+id/breakLine"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/backgroundApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brandProduct" />
+
+    <ImageView
+        android:id="@+id/photoProduct"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/breakLine"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ellipsize="end"
+        android:maxWidth="100dp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:text="G2004324234234234234234234"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/photoProduct"
+        app:layout_constraintTop_toTopOf="@id/photoProduct" />
+
+    <TextView
+        android:id="@+id/descriptionProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="100sp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:text="G2004324234234234234234234"
+        android:textColor="@color/textGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/nameProduct"
+        app:layout_constraintTop_toBottomOf="@id/nameProduct" />
+
+    <TextView
+        android:id="@+id/statusProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="130dp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:text="Curently available"
+        android:textColor="@color/textBlue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/nameProduct"
+        app:layout_constraintTop_toBottomOf="@id/descriptionProduct" />
+
+    <com.example.android.training.base.ButtonAddToCartView
+        android:id="@+id/buttonCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/photoProduct" />
+
+    <TextView
+        android:id="@+id/oldPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="70dp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:text="760434"
+        android:textColor="@color/textGrey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/nameProduct"
+        app:layout_constraintTop_toBottomOf="@id/photoProduct" />
+    <TextView
+        android:id="@+id/discountPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="70dp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:layout_marginStart="5dp"
+        android:text="760434"
+        android:textColor="@color/textRed"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/oldPrice"
+        app:layout_constraintTop_toBottomOf="@id/photoProduct" />
+    <TextView
+        android:id="@+id/x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="x"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/discountPrice"
+        app:layout_constraintTop_toBottomOf="@id/photoProduct" />
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/x"
+        app:layout_constraintTop_toBottomOf="@id/photoProduct" />
+
+    <TextView
+        android:id="@+id/sumPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="70dp"
+        android:maxLength="@integer/material_motion_duration_short_1"
+        android:maxLines="1"
+        android:layout_marginStart="5dp"
+        android:text="760434"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photoProduct" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
