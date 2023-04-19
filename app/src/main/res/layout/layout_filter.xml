@@ -3,12 +3,15 @@
     android:id="@+id/filter"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@color/white"
+
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/filterRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp" />
+
+        />
 </LinearLayout>

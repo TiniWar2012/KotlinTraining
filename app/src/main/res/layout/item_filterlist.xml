@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:background="#ffffff">
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="5dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="63dp"

@@ -7,7 +7,7 @@
     <item
         android:id="@+id/productFragment"
         android:icon="@drawable/selector_brand_navbar"
-        android:title="Food" />
+        android:title="Product" />
     <item
         android:id="@+id/myStoreFragment"
         android:icon="@drawable/img_central_icon"

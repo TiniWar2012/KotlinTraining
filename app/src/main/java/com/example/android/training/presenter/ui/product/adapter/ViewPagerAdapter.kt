@@ -2,8 +2,8 @@ package com.example.android.training.presenter.ui.product.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.android.training.presenter.ui.product.childfragment.MapFragment
-import com.example.android.training.presenter.ui.product.childfragment.ListProductFragment
+import com.example.android.training.presenter.ui.product.controller.childfragment.MapFragment
+import com.example.android.training.presenter.ui.product.controller.childfragment.ListProductFragment
 
 private const val NUM_TABS = 2
 

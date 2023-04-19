@@ -1,4 +1,4 @@
-package com.example.android.training.presenter.ui.product.childfragment
+package com.example.android.training.presenter.ui.product.controller.childfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

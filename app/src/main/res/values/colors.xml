@@ -16,7 +16,7 @@
     <color name="textBlue">#5B9AE4</color>
     <color name="mainRed">#8C222E</color>
     <color name="textRed">#B54152</color>
-    <color name="backgroundApp">#E3E3E3</color>
+    <color name="backgroundApp">#F7F7F7</color>
     <color name="backgroundItem">#FFFFFF</color>
     <color name="backgroundGrey">#808080</color>
 </resources>

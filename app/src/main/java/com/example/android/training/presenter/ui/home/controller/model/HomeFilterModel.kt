@@ -20,6 +20,7 @@ abstract class HomeFilterModel : EpoxyViewBindingModelWithHolder<LayoutFilterBin
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         filterRecyclerView.apply {
             adapter = filterAdapter
+
         }
 
     }

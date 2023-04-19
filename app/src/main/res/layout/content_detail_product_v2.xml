@@ -49,7 +49,7 @@
             app:layout_constraintTop_toBottomOf="@id/title_product" />
 
         <TextView
-            android:id="@+id/price_product"
+            android:id="@+id/priceNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLength="50"
@@ -60,14 +60,33 @@
             app:layout_constraintStart_toStartOf="@+id/title_product"
             app:layout_constraintTop_toBottomOf="@id/description_product" />
 
+        <TextView
+            android:id="@+id/priceOld"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:text="PriceOld"
+            android:textColor="@color/textGrey"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/priceNew"
+            app:layout_constraintTop_toBottomOf="@id/description_product" />
+
         <RatingBar
             android:id="@+id/ratingBar"
             style="@android:style/Widget.Material.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:indeterminateTint="@color/backgroundGrey"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/backgroundGrey"
+            android:progressTint="#F5C319"
+            android:rating="5"
+            android:secondaryProgressTint="#F5C319"
+            android:stepSize="0.01"
             app:layout_constraintStart_toStartOf="@+id/title_product"
-            app:layout_constraintTop_toBottomOf="@id/price_product" />
+            app:layout_constraintTop_toBottomOf="@id/priceNew" />
 
         <View
             android:id="@+id/line_end"

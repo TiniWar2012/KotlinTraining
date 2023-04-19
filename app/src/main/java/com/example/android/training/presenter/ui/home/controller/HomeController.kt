@@ -16,12 +16,12 @@ class HomeController(
     TypedEpoxyController<HomeViewState>() {
     override fun buildModels(data: HomeViewState?) {
         data?.run {
+            homeFilter {
+                id("_home_filter")
+            }
             headerBanner {
                 id("_header_image_banner")
                 listBanner(homeBannerDataModel)
-            }
-            homeFilter {
-                id("_home_filter")
             }
             newArrivalProduct {
                 id("new_arrival")

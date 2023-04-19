@@ -17,7 +17,7 @@
             android:id="@+id/btnBack1"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/btn_back"
             app:layout_constraintBottom_toBottomOf="@id/btn_bag"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/btn_bag" />
@@ -52,8 +52,7 @@
         app:layout_constraintBottom_toTopOf="@id/action"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <include
         android:id="@+id/action"
@@ -63,4 +62,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import com.example.android.training.presenter.ui.product.model.ProductLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 val tabArray = arrayOf(
-    "Drink", "Fast Food"
+    "Drink", "Product"
 )
 
 class ProductFragment : Fragment() {

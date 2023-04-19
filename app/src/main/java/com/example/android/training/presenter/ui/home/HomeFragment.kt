@@ -70,9 +70,9 @@ class HomeFragment : Fragment(), ItemClickListener, HandleClickListener {
         binding.epoxyRecyclerView.adapter = homeController.adapter
         binding.epoxyRecyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.btnDelete.setOnClickListener {
-            homeViewModel.deleteAllData()
-        }
+//        binding.btnDelete.setOnClickListener {
+//            homeViewModel.deleteAllData()
+//        }
 //        buttonAccount = binding.icoUser
 //        buttonAccount.setOnClickListener {
 //            findNavController().navigate(R.id.action_HomeFragment_to_accountFragment)

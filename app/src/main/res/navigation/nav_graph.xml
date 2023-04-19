@@ -81,19 +81,26 @@
         android:label="FoodFragment" />
     <fragment
         android:id="@+id/listProductFrasgment"
-        android:name="com.example.android.training.presenter.ui.product.childfragment.ListProductFragment"
-        tools:layout="@layout/child_fragment_product">
+        android:name="com.example.android.training.presenter.ui.product.controller.childfragment.ListProductFragment"
+        tools:layout="@layout/layout_product_vertical">
         <action
             android:id="@+id/action_listProductFrasgment_to_productDetailFragment_v2"
             app:destination="@id/productDetailFragment_v2" />
     </fragment>
     <fragment
         android:id="@+id/productDetailFragment_v2"
-        android:name="com.example.android.training.presenter.ui.detail.ProductDetailFragment_v2"
+        android:name="com.example.android.training.presenter.ui.detail.ProductDetailFragmentNew"
         tools:layout="@layout/content_detail_product_v2">
         <action
             android:id="@+id/action_productDetailFragment_v2_to_listProductFrasgment"
             app:destination="@id/listProductFrasgment" />
+        <action
+            android:id="@+id/action_productDetailFragment_v2_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.android.training.presenter.ui.cart.CartFragment"
+        tools:layout="@layout/fragment_cart">
+    </fragment>
 </navigation>
