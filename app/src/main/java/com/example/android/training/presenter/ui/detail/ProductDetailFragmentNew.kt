@@ -1,11 +1,15 @@
 package com.example.android.training.presenter.ui.detail
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.strikeThrough
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -27,6 +31,7 @@ class ProductDetailFragmentNew : Fragment() {
     private var product: ProductLayout? = null
 
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -40,6 +45,14 @@ class ProductDetailFragmentNew : Fragment() {
             productId.text = product?.id.toString()
             descriptionProduct.text = product?.description.toString()
             priceNew.text = getString(R.string.price, product?.price.toString())
+            if (product?.discountPercentage!!.toFloat() > 0) {
+                priceOld.text = SpannableStringBuilder().strikeThrough {
+                    append("฿ ${product!!.price - (product!!.price * (product!!.discountPercentage / 100))}")
+                }
+                priceOld.isVisible
+            } else {
+                priceOld.isVisible = false
+            }
             titleProduct.text = product?.title.toString()
             ratingBar.rating = product?.rating!!.toFloat()
         }

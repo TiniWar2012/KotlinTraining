@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_loggedFragment"
             app:destination="@id/loggedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -49,7 +52,7 @@
     <fragment
         android:id="@+id/accountFragment"
         android:name="com.example.android.training.presenter.ui.account.AccountFragment"
-        tools:layout="@layout/fragment_account" >
+        tools:layout="@layout/fragment_account">
         <action
             android:id="@+id/action_accountFragment_to_HomeFragment"
             app:destination="@id/homeFragment" />

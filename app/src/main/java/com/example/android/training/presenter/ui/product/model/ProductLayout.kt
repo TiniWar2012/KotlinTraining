@@ -19,7 +19,7 @@ data class ProductLayout(
     @ColumnInfo(name = "brand") val brand: String,
     @ColumnInfo(name = "category") val category: String,
     @ColumnInfo(name = "description") val description: String,
-    @ColumnInfo(name = "discountPercentage") val discountPercentage: Double,
+    @ColumnInfo(name = "discountPercentage") var discountPercentage: Double,
     @ColumnInfo(name = "images") val images: List<String>,
     @ColumnInfo(name = "price") val price: Int,
     @ColumnInfo(name = "rating") val rating: Double,

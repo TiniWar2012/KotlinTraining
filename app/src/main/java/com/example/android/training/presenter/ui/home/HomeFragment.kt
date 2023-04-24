@@ -87,6 +87,9 @@ class HomeFragment : Fragment(), ItemClickListener, HandleClickListener {
                 }
             }
         }
+        binding.icoCart.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        }
     }
 
     override fun onDestroyView() {
